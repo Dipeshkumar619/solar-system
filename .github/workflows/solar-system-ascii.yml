@@ -15,11 +15,6 @@ jobs:
           name: my-artifact
           path: dragon.txt
   test_job_2:
-      runs-on: ubuntu-latest
-      steps: 
-      - name: test_job_3
-        run: echo "this is test job3"
-  test_job_3:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/download-artifact@v5
@@ -27,3 +22,8 @@ jobs:
           name: my-artifact
       - name: test_job_4
         run: ls -R
+  test_job_3:
+      runs-on: ubuntu-latest
+      steps: 
+      - name: test_job_3
+        run: echo "this is test job3"
