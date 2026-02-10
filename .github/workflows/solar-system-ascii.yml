@@ -1,0 +1,26 @@
+name: github-action-file
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        uses: actions/checkout@v4
+      - name: Install coway
+        run:  sudo apt-get install cowsay -y
+      - name: Execute cowsay cmd
+        run:  cowsay -f dragon "hey there i saw dragon ..run save yourself" >> dragon.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: dragon.txt
+  test_job_2:
+      runs-on: ubuntu-latest
+      steps: 
+      - name: test_job_3
+        run: echo "this is test job3"
+  test_job_3:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: test_job_4
+        run: echo "this is test job3"
