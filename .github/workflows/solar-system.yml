@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: step1
         uses: actions/checkout@v4
+      - name: third party
+        run: cowsay -f dragon "Run for Cover, I am a Dragon...RAWR" >> dragon.txt
       - name: step2
         run: |
           echo "my second job step2"
