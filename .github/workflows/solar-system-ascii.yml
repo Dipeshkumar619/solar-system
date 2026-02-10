@@ -7,9 +7,9 @@ jobs:
       - name: step1
         uses: actions/checkout@v4
       - name: Install cowsay 
-        run: |
-          sudo apt-get install cowsay -y
-          cowsay -f dragon "Run for Cover, I am a Dragon...RAWR" >> dragon.txt
+        run: sudo apt-get install cowsay -y
+      - name: run cowsay 
+        run: cowsay -f "run for cover...there i saw a dragon...ROAWR" > dragon.txt
       - name: Test file exists
         run: grep -i "dragon" dragon.txt 
       - name: Read File 
