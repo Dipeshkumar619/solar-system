@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: step1
         uses: actions/checkout@v4
-      - name: run shell script again
-        run: ./script.sh
-
+      - name: list files
+        run:  ls && ./script.sh
+      - name: run shell script 
+        run:  ./script.sh
