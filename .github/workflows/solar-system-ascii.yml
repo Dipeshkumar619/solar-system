@@ -1,0 +1,18 @@
+name: github-action-file
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        uses: actions/checkout@v4
+      - name: Install cowsay 
+        run: |
+          sudo apt-get install cowsay -y
+          cowsay -f dragon "Run for Cover, I am a Dragon...RAWR" >> dragon.txt
+      - name: Test file exists
+        run: grep -i "dragon" dragon.txt 
+      - name: Read File 
+        run: cat dragon.txt
+      - name: List Repo Files 
+        run: ls -ltra     
