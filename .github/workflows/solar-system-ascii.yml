@@ -22,5 +22,8 @@ jobs:
   test_job_3:
     runs-on: ubuntu-latest
     steps: 
+      - uses: actions/download-artifact@v5
+        with:
+          name: my-artifact
       - name: test_job_4
-        run: echo "this is test job3"
+        run: ls -R
