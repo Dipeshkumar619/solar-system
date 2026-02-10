@@ -1,3 +1,14 @@
-name: github action file
-on: [push]
-
+name: github-action-file
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: step1
+        run: hostname
+      - name: step2
+        run: echo "my second job step2"
+      - name: list files
+        run: ls 
+      - name: read file
+        run: cat README.md
