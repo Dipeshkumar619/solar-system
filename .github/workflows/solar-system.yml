@@ -7,8 +7,7 @@ jobs:
       - name: step1
         uses: actions/checkout@v4
       - name: step2
-        run: echo "my second job step2"
-      - name: list files
-        run: ls 
-      - name: read file
-        run: cat README.md
+        run: |
+          echo "my second job step2"
+          ls 
+          cat README.md
