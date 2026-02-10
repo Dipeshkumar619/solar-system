@@ -2,6 +2,7 @@ name: github-action-file
 on: push
 jobs:
   first_job:
+    needs: test_job_2
     runs-on: ubuntu-latest
     steps:
       - name: step1
@@ -10,3 +11,13 @@ jobs:
         run:  ls
       - name: run shell script 
         run:  chmod +x script.sh && ./script.sh
+  test_job_2:
+      runs-on: ubuntu-latest
+      steps: 
+      - name: test_job_3
+        run: echo "this is test job3"
+  test_job_3:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: test_job_4
+        run: echo "this is test job3"
