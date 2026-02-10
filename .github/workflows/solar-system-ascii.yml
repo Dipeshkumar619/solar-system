@@ -20,6 +20,7 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           name: my-artifact
+          path: dragon.txt
       - name: test_job_4
         run: ls -R
   test_job_3:
