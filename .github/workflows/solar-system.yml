@@ -30,9 +30,6 @@ jobs:
       - name: Install Dependencies
         run: npm install 
 
-      - name: Test applicaiton
-        run: npm test 
-
       - name: Code-Coverage-Result
         run: npm run coverage 
     
