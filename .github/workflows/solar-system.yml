@@ -55,7 +55,13 @@ jobs:
             username: ${{ vars.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
 
-  
+        - name: Docker build for testing
+          uses: actions/build-push-actions@v4
+          with:
+            context: .
+            push: false
+            tags: ${{ vars.DOCKER_USERNAME }}/solar-system:${{ github.sha }}
+
 
 
 
