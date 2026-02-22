@@ -42,6 +42,8 @@ jobs:
           path: coverag
           retention-days: 5
     docker:
+      needs:
+        - unit-testing
       name: containerization
       runs-on: ubuntu-20.04
       steps:
@@ -58,4 +60,5 @@ jobs:
 
 
   
+
 
